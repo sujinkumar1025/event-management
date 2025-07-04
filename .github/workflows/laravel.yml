@@ -30,7 +30,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.2'
           extensions: mbstring, bcmath, xml, pdo, mysql
 
       - name: Install Composer Dependencies
@@ -42,7 +42,7 @@ jobs:
       - name: Generate App Key
         run: php artisan key:generate
 
-      - name: Wait for MySQL
+      - name: Wait for MySQL to be ready
         run: sleep 15
 
       - name: Run Migrations
